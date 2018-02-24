@@ -11,7 +11,7 @@ SRC_URI = "file://JSmart_Promotional.OGG.tar.bz2 \
 "
 
 DEPENDS = "gstreamer"
-
+RDEPENDS_${PN} += "bash"
 do_install_append() {
     install -d ${D}/${datadir}/applications
     install -m 0644 ${WORKDIR}/promovideo.desktop ${D}/${datadir}/applications

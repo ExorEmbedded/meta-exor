@@ -13,7 +13,7 @@ SRCREV = "4a49d7884bb09488318f49c78f584f030cb2c487"
 SRC_URI = "git://github.com/ExorEmbedded/linux-us03.git;branch=${SRCBRANCH}"
 SRC_URI_append_ns01-ek435 += "file://0001-Redpine-wifi-driver-OSD-1.3-RC9.patch "
 S = "${WORKDIR}/git"
-require recipes-kernel/linux/linux-dtb.inc
+#require recipes-kernel/linux/linux-dtb.inc
 require ../linux-exor.inc
 
 PROVIDES += "linux kernel"
