@@ -10,10 +10,14 @@ CONFLICT_DISTRO_FEATURES = "wayland"
 
 require core-image-exor.inc
 
+IMAGE_INSTALL_append_nsom01 += " \
+					supertuxkart \
+"
+
 IMAGE_INSTALL += " 	qtx11extras \
 					promovideo \
 					supertux2 \
-					supertuxkart \
+					pingus \
 "
 IMAGE_INSTALL_append_usom03 = "\
 	xserver-xf86-config \

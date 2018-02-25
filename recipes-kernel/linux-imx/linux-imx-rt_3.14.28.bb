@@ -5,7 +5,6 @@ DESCRIPTION = "Linux kernel that is based on Freescale's linux-imx, \
 with added real-time capabilities."
 
 require linux-imx.inc
-require recipes-kernel/linux/linux-dtb.inc
 require ../linux-exor.inc 
 
 PROVIDES += "linux kernel"
@@ -13,6 +12,7 @@ SRC_URI_append = "\
     file://0001-Added-compiler-gcc6.h.patch \
     file://0002-use-static-inline-in-ARM-ftrace.patch \
     file://0003-change-extern-inline-to-static-inline-in-glue-cache.patch \
+    file://0004-Add-linux-compiler-gcc7.h-to-fix-builds-with-gcc7.patch \
 "
 
 do_deploy () {
