@@ -6,10 +6,10 @@ LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=ce29dbb849109f28c0a0358e8fedbc64"
 PR = "2"
 PV = "233"
 
-JM_URI = "http://download.exorembedded.net:8080/Public/usom01/JMobile/jmobile2.01-${PV}-${PR}_portable_us01kit_cds3.tar.gz"
-JM_URI_us02-kit = "http://download.exorembedded.net:8080/Public/usom02/JMobile/jmobile2.01-${PV}-${PR}_portable_alterakit_cds3.tar.gz"
-JM_URI_us03-kit = "http://download.exorembedded.net:8080/Public/usom03/JMobile/jmobile2.01-${PV}-${PR}_portable_us03kit_cds3.tar.gz"
-JM_URI_nsom01   = "http://download.exorembedded.net:8080/Public/usom03/JMobile/jmobile2.01-${PV}-${PR}_portable_us03kit_cds3.tar.gz"
+JM_URI          = "${EXOR_FTP}/usom01/JMobile/jmobile2.01-${PV}-${PR}_portable_us01kit_cds3.tar.gz"
+JM_URI_us02-kit = "${EXOR_FTP}/usom02/JMobile/jmobile2.01-${PV}-${PR}_portable_alterakit_cds3.tar.gz"
+JM_URI_us03-kit = "${EXOR_FTP}/usom03/JMobile/jmobile2.01-${PV}-${PR}_portable_us03kit_cds3.tar.gz"
+JM_URI_nsom01   = "${EXOR_FTP}/usom03/JMobile/jmobile2.01-${PV}-${PR}_portable_us03kit_cds3.tar.gz"
 
 SRC_URI = "file://jmobile.desktop"
 
@@ -17,9 +17,11 @@ S = "${WORKDIR}/portable"
 
 do_fetch () {
 	wget ${JM_URI} -O ${WORKDIR}/jmobile_portable.tar.gz
-	tar xzf ${WORKDIR}/jmobile_portable.tar.gz -C ${WORKDIR} portable/LICENSE.txt
 }
 
+do_unpack_license () {
+	tar xzf ${WORKDIR}/jmobile_portable.tar.gz -C ${WORKDIR} portable/LICENSE.txt
+}
 
 do_install() {
 	install -d ${D}${datadir}/applications
@@ -29,3 +31,5 @@ do_install() {
 }
 
 FILES_${PN} = "${datadir}/applications/ /home/root/jmobile_portable.tar.gz"
+
+addtask unpack_license after do_unpack before do_populate_lic

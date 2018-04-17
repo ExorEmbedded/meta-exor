@@ -1,10 +1,9 @@
-QT5_BASE = "\
+QT5_BASE = " \
 	qtbase \
 	qtmultimedia \
 	qtimageformats \
-"
-
-QT5_GRAPHICS = "\
+	qtsvg \
+	qtsvg-plugins \
 	qt3d \
 	qtcanvas3d \
 	qtquickcontrols \
@@ -16,12 +15,20 @@ QT5_GRAPHICS = "\
 	qtquickcontrols2 \
 	qtquickcontrols2-qmlplugins \
 	qtgraphicaleffects \
+"
+
+QT5_WEB = " \
+	qtwebengine \
+	qtwebengine-examples \
+"
+
+QT5_DEMO = " \
 	qtsmarthome \
 	cinematicexperience \
 	qt5nmapcarousedemo \
 "
 
-TOOLS = "\
+TOOLS = " \
 	bash \
 	htop \
 	lsof \
@@ -34,28 +41,37 @@ TOOLS = "\
 	evtest \
 	devmem2 \
 	i2c-tools \
-	gdb \
 	procps \
- 	strace \
- "
+	hwlatdetect \
+	rt-tests \
+"
 
-NET_TOOLS = "\
-    iperf3 \
+NET_TOOLS = " \
+	iperf3 \
 	vlan \
 	tcpdump \
 	iftop \
 	iproute2 \
 "
 
-GSTREAMER = "\
+GSTREAMER = " \
+	gstreamer1.0-plugins-base-playback \
 	gstreamer1.0-meta-base \
+	gstreamer1.0-meta-audio \
 	gstreamer1.0-meta-video \
-	gstreamer1.0-plugins-good \
-	gstreamer1.0-plugins-bad \
+	gstreamer1.0-plugins-good-meta \
+	gstreamer1.0-plugins-bad-meta \
+	gstreamer1.0-plugins-ugly-meta \
+	gstreamer1.0-libav \
 "
+
+GSTREAMER_append_usom03 = " \
+	gstreamer1.0-plugins-imx \
+"
+
 AUDIO = "\
 	alsa-tools \
-    alsa-utils \
+	alsa-utils \
 	pulseaudio \ 
 "
 
@@ -75,18 +91,15 @@ IMAGE_INSTALL += "\
 	kernel-modules \
 	${GSTREAMER} \
 	${QT5_BASE} \
+	${QT5_WEB} \
 	${TOOLS} \
 	${NET_TOOLS} \
-    ${AUDIO} \
+	${AUDIO} \
 	${WIFI} \
 "
 
 IMAGE_FEATURES_remove = "ssh-server-dropbear"
-IMAGE_FEATURES += "ssh-server-openssh"
-
-# Uncomment to include chromium web browser on the board. The build
-# requires at least 8GB of free RAM memory otherwise the linking phase may fail
-#CORE_IMAGE_EXTRA_INSTALL += "chromium"
+IMAGE_FEATURES += "ssh-server-openssh tools-profile tools-debug"
 
 ROOTFS_POSTPROCESS_COMMAND += "jmInstall;"
 

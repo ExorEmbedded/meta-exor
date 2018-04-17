@@ -10,19 +10,16 @@ CONFLICT_DISTRO_FEATURES = "wayland"
 
 require core-image-exor.inc
 
-IMAGE_INSTALL_append_nsom01 += " \
-					supertuxkart \
+IMAGE_INSTALL += " \
+	qtx11extras \
+	promovideo \
 "
 
-IMAGE_INSTALL += " 	qtx11extras \
-					promovideo \
-					supertux2 \
-					pingus \
-"
+IMAGE_INSTALL += "chromium"
+
 IMAGE_INSTALL_append_usom03 = "\
 	xserver-xf86-config \
-	xf86-video-fbdev \
-	${QT5_GRAPHICS} \
+	${QT5_DEMO} \
 "
 
 export IMAGE_BASENAME = "core-image-exor-x11"

@@ -1,11 +1,8 @@
 
 do_compile_append () {
-    cd ${S}/examples
-    oe_runmake
+    oe_runmake sub-examples
 }
 
 do_install_append() {
-    cd ${S}/examples
-    oe_runmake install INSTALL_ROOT=${D}
+    oe_runmake sub-examples-install_subtargets INSTALL_ROOT=${D}
 }
-
