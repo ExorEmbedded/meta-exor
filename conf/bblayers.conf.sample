@@ -9,6 +9,7 @@ BBFILES = ""
 
 BBLAYERS += " \
   ${SRCDIR}/meta-exor \
+  ${SRCDIR}/meta-freescale \
   ${SRCDIR}/yocto-poky/meta \
   ${SRCDIR}/yocto-poky/meta-poky \
   ${SRCDIR}/yocto-poky/meta-yocto-bsp \
@@ -17,9 +18,7 @@ BBLAYERS += " \
   ${SRCDIR}/yocto-meta-openembedded/meta-python \
   ${SRCDIR}/yocto-meta-openembedded/meta-networking \
   ${SRCDIR}/yocto-meta-openembedded/meta-multimedia \
-  ${SRCDIR}/meta-browser \
   ${SRCDIR}/meta-qt5 \
-  ${SRCDIR}/meta-freescale \
 "
 
 BBLAYERS_NON_REMOVABLE ?= " \

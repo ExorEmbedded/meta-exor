@@ -37,7 +37,7 @@
 # - us03-kit
 # - ns01-kit
 #
-MACHINE = "us01-kit"
+MACHINE = "ns01-kit"
 
 #
 # Where to place downloads
@@ -111,8 +111,8 @@ PACKAGE_CLASSES ?= "package_rpm"
 # you can build the SDK packages for architectures other than the machine you are 
 # running the build on (i.e. building i686 packages on an x86_64 host._
 # Supported values are i686 and x86_64
-#SDKMACHINE ?= "i686"
-
+#SDKMACHINE = "i686"
+SDKMACHINE = "x86_64"
 #
 # Extra image configuration defaults
 #
@@ -217,11 +217,9 @@ BB_DISKMON_DIRS = "\
 # this doesn't mean anything to you.
 CONF_VERSION = "1"
 
-# Add freescale dynamic layer
-BBFILE_COLLECTIONS += "browser-layer qt5-layer"
+#LICENSE_FLAGS_WHITELIST += "commercial"
 
 # Mask machine specific layers
 BBMASK = "meta-freescale"
-BBMASK_us01-kit = "meta-freescale"
-BBMASK_usom03 = "meta-freescale/recipes-graphics/mesa/mesa_%.bbappend"
+BBMASK_usom03 = ""
 BBMASK_nsom01 = ""

@@ -61,8 +61,7 @@ GSTREAMER = " \
 	gstreamer1.0-meta-video \
 	gstreamer1.0-plugins-good-meta \
 	gstreamer1.0-plugins-bad-meta \
-	gstreamer1.0-plugins-ugly-meta \
-	gstreamer1.0-libav \
+	${@bb.utils.contains('LICENSE_FLAGS_WHITELIST', 'commercial', 'gstreamer1.0-plugins-ugly-meta gstreamer1.0-libav', '', d)} \
 "
 
 GSTREAMER_append_usom03 = " \

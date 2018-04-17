@@ -15,7 +15,7 @@ IMAGE_INSTALL += " \
 	promovideo \
 "
 
-IMAGE_INSTALL += "chromium"
+IMAGE_INSTALL += "chromium-x11"
 
 IMAGE_INSTALL_append_usom03 = "\
 	xserver-xf86-config \
