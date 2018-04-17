@@ -8,22 +8,21 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 SRC_URI = "git://github.com/ExorEmbedded/uboot-us01.git;protocol=git;branch=uboot2014.04_uS01"
 SRCREV = "e7340191ba8c56f8c8733cc217cacc86030ac81a"
 
-SRC_URI_usom02 = "git://github.com/ExorEmbedded/uboot-us02.git;protocol=git;branch=master \
-				  ${GCC6_PATCH} \
-"
+SRC_URI_usom02 = "git://github.com/ExorEmbedded/uboot-us02.git;protocol=git;branch=master"
 SRCREV_usom02  = "cab40e340784b1dbf7c5a0f72697f0c1ae066d42"
 
 SRC_URI_nsom01 = "git://github.com/ExorEmbedded/uboot-us01.git;protocol=git;branch=uboot2017.07_nS01"
 SRCREV_nsom01  = "5327b89c6889165abf9dfa49191638b33448d64f"
 
-GCC6_PATCH = " file://0001-Add-linux-compiler-gcc5.h-to-fix-builds-with-gcc5.patch \
-		       file://0002-Add-linux-compiler-gcc6.h-to-fix-builds-with-gcc6.patch \
-		       file://0003-gcc5-use_gcc_inline_version_instead_c99.patch \
+GCC7_PATCH = " file://0001-Add-linux-compiler-gcc5.h-to-fix-builds-with-gcc5.patch \
+               file://0002-Add-linux-compiler-gcc6.h-to-fix-builds-with-gcc6.patch \
+               file://0003-gcc5-use_gcc_inline_version_instead_c99.patch \
+               file://0004-Add-linux-compiler-gcc7.h-to-fix-builds-with-gcc7.patch \
 "
 
-SRC_URI_append_usom01 = "${GCC6_PATCH}"
-#SRC_URI_append_usom02 = "${GCC6_PATCH}"
-SRC_URI_append_usom03 = "${GCC6_PATCH}"
+SRC_URI_append_usom01 = "${GCC7_PATCH}"
+SRC_URI_append_usom02 = "${GCC7_PATCH}"
+SRC_URI_append_usom03 = "${GCC7_PATCH}"
 
 UBOOT_SUFFIX_usom03 = "imx"
 UBOOT_SUFFIX_nsom01 = "imx"
