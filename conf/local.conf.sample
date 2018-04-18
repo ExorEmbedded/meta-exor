@@ -220,6 +220,6 @@ CONF_VERSION = "1"
 #LICENSE_FLAGS_WHITELIST += "commercial"
 
 # Mask machine specific layers
-BBMASK = "meta-freescale"
-BBMASK_usom03 = ""
-BBMASK_nsom01 = ""
+BBMASK = "meta/recipes-graphics/xorg-|meta-freescale"
+BBMASK_usom03 = "meta/recipes-graphics/xorg-"
+BBMASK_nsom01 = "meta/recipes-graphics/xorg-"
