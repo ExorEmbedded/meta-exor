@@ -1,6 +1,7 @@
 QT5_BASE = " \
 	qtbase \
 	qtmultimedia \
+	qtmultimedia-examples \
 	qtimageformats \
 	qtsvg \
 	qtsvg-plugins \
@@ -26,6 +27,7 @@ QT5_DEMO = " \
 	qtsmarthome \
 	cinematicexperience \
 	qt5nmapcarousedemo \
+	qt5-demo-extrafiles \
 "
 
 TOOLS = " \

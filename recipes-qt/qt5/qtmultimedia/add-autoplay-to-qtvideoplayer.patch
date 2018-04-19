@@ -1,0 +1,11 @@
+diff -uNr git2/examples/multimediawidgets/videowidget/main.cpp git/examples/multimediawidgets/videowidget/main.cpp
+--- git2/examples/multimediawidgets/videowidget/main.cpp	2018-04-18 10:44:30.925352795 +0200
++++ git/examples/multimediawidgets/videowidget/main.cpp	2018-04-18 10:44:51.134352580 +0200
+@@ -77,6 +77,7 @@
+             QUrl::fromUserInput(parser.positionalArguments().constFirst(),
+                                 QDir::currentPath(), QUrl::AssumeLocalFile);
+         player.setUrl(url);
++        player.play();
+     }
+ 
+     const QRect availableGeometry = QApplication::desktop()->availableGeometry(&player);
