@@ -1,3 +1,3 @@
 #!/bin/sh
 
-[ -e /etc/pointercal.xinput ] && . /etc/pointercal.xinput
+/usr/bin/xinput_calibrator_once.sh

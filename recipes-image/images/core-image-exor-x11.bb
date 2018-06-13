@@ -22,4 +22,4 @@ IMAGE_INSTALL_append_usom03 = "\
 	${QT5_DEMO} \
 "
 
-export IMAGE_BASENAME = "core-image-exor-x11"
+IMAGE_NAME = "core-image-exor-x11-${MACHINE}-v${DISTRO_VERSION}"

@@ -21,6 +21,8 @@ QT5_BASE = " \
 QT5_WEB = " \
 	qtwebengine \
 	qtwebengine-examples \
+	qtwebkit \
+	qtwebkit-examples-examples \
 "
 
 QT5_DEMO = " \
@@ -45,6 +47,7 @@ TOOLS = " \
 	i2c-tools \
 	procps \
 	hwlatdetect \
+	gnome-system-monitor \
 	rt-tests \
 "
 
@@ -85,6 +88,7 @@ IMAGE_INSTALL += "\
 	canutils \
 	vim \
 	jmobile-portable \
+	xf86-input-evdev \
 	openvpn \
 	openssh-sftp-server \
 	e2fsprogs \
@@ -102,17 +106,9 @@ IMAGE_INSTALL += "\
 IMAGE_FEATURES_remove = "ssh-server-dropbear"
 IMAGE_FEATURES += "ssh-server-openssh tools-profile tools-debug"
 
-ROOTFS_POSTPROCESS_COMMAND += "jmInstall;"
-
-jmInstall() {
-   JMobilePkg="${IMAGE_ROOTFS}/home/root/jmobile_portable.tar.gz"
-   [ -f ${JMobilePkg} ] && tar xzf ${JMobilePkg} -C ${IMAGE_ROOTFS}/home/root; rm ${JMobilePkg}
-}
-
-
 inherit populate_sdk_qt5
 
 # Required by qtcreator debugger
 TOOLCHAIN_HOST_TASK += "nativesdk-python3-json"
 
-TOOLCHAIN_OUTPUTNAME = "${SDKMACHINE}-exor-${MACHINE}-qt5-x11-sdk-${DISTRO_VERSION}"
+TOOLCHAIN_OUTPUTNAME = "${SDKMACHINE}-exor-${MACHINE}-qt5-x11-sdk-v${DISTRO_VERSION}"

@@ -22,10 +22,7 @@ SRC_URI_append_usom03 = "file://us03-fix-EGL-include-order.patch"
 
 PACKAGECONFIG_DISTRO += "accessibility fontconfig freetype libinput gif ico sql-sqlite"
 
-PACKAGECONFIG_GL_usom01 = "${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'gles2', 'no-opengl', d)}"
-PACKAGECONFIG_GL_usom02 = "no-opengl"
-PACKAGECONFIG_GL_usom03 = "gles2"
-PACKAGECONFIG_GL_nsom01 = "no-opengl"
+PACKAGECONFIG_GL = "gles2"
 
 python do_patch_append() {
     import shutil

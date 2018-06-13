@@ -1,12 +1,12 @@
 [Desktop Entry]
-Version=2.1
-Name=JMobile 2.1
+Version=2.8
+Name=JMobile 2.8
 # Only KDE 4 seems to use GenericName, so we reuse the KDE strings.
 # From Ubuntu's language-pack-kde-XX-base packages, version 9.04-20090413.
 GenericName=HMI
 Comment=Start JMobile Runtime
-Exec=nohup /home/root/portable/sato_start.sh
+Exec=/opt/jmobile_portable/sato_start.sh
 Terminal=false
-Icon=/home/root/portable/jmobile_icon.png
+Icon=/opt/jmobile_portable/jmobile_icon.png
 Type=Application
 Categories=HMI;

@@ -1,0 +1,53 @@
+# There are a number of modifiers that are allowed to be used in some
+# of the different fields. They provide the following subsitutions:
+#
+# %n the "kernel number" of the device.
+#    For example, 'sda3' has a "kernel number" of '3'
+# %e the smallest number for that name which does not matches an existing node
+# %k the kernel name for the device
+# %M the kernel major number for the device
+# %m the kernel minor number for the device
+# %b the bus id for the device
+# %c the string returned by the PROGRAM
+# %s{filename} the content of a sysfs attribute
+# %% the '%' char itself
+#
+
+# Create a symlink to the pwm-beeper input device
+SUBSYSTEMS=="input", KERNEL=="event[0-9]*", KERNELS=="input[0-9]*", ATTRS{name}=="pwm-beeper", SYMLINK+="input/beeper"
+
+# All other communication devices belong to 'comm' group (also plain 'user' belongs to it)
+KERNEL=="gpio*", PROGRAM="/bin/sh -c '\
+    /bin/chgrp -R comm /sys/class/gpio; /bin/chmod -R 770 /sys/class/gpio; \
+    /bin/chgrp -R comm /sys/devices/virtual/gpio; /bin/chmod -R 770 /sys/devices/virtual/gpio; \
+    '"
+SUBSYSTEM=="spidev", GROUP="comm", MODE="0660"
+SUBSYSTEM=="i2c-dev", GROUP="comm", MODE="0660"
+
+#
+# FRAM
+#
+
+SUBSYSTEM=="spi", ATTRS{modalias}=="spi:at25", PROGRAM="/bin/ln -s /sys/bus/spi/devices/%k/eeprom /dev/fram"
+
+#
+# PLxx plugins
+#
+
+DRIVER=="plxx_manager", PROGRAM="/bin/sh -c '\
+        NAME=$(echo %k | cut -d. -f1 ); \
+        /bin/ln -s /sys/bus/platform/devices/%k /dev/$NAME"
+
+#
+# Video
+#
+
+SUBSYSTEM=="backlight", RUN+="/bin/chgrp video /sys/class/backlight/%k/brightness /sys/class/backlight/%k/bl_power", \
+    RUN+="/bin/chmod 664 /sys/class/backlight/%k/brightness /sys/class/backlight/%k/bl_power"
+
+# Create symlinks for uart ports
+KERNEL=="ttyUSB0", SUBSYSTEM=="tty", SYMLINK="com10"
+KERNEL=="ttyUSB1", SUBSYSTEM=="tty", SYMLINK="com11"
+KERNEL=="ttyUSB2", SUBSYSTEM=="tty", SYMLINK="com12"
+KERNEL=="ttyUSB3", SUBSYSTEM=="tty", SYMLINK="com13"
+KERNEL=="ttyUSB4", SUBSYSTEM=="tty", SYMLINK="com14"
