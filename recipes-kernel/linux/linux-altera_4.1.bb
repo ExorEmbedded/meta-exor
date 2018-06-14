@@ -10,14 +10,16 @@ SRC_URI[md5sum] = "7094df7dedb134fa41ee6679a34de190"
 SRCREV = "fd938fe480e311217e61ded24b6b138f64028f18"
 
 SRC_URI += "file://0001-Added-compiler-gcc6.h.patch \
-            file://0004-Add-linux-compiler-gcc7.h-to-fix-builds-with-gcc7.patch \
+            file://0002-Add-linux-compiler-gcc7.h-to-fix-builds-with-gcc7.patch \
+            file://0003-added-stmmac-driver-from-kernel-4.3.patch \
+            file://0004-cumulative-deipce.patch \
 "
 
 COMPATIBLE_MACHINE = "(usom02)"
 
 include ./linux-altera.inc
 
-PR = "r2"
+PR = "r3"
 
 PROVIDES += "linux kernel"
 
