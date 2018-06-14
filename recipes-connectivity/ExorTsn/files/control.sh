@@ -4,7 +4,7 @@ set -e
 
 [ -z "$bindir" ] && bindir=/home/root/bin
 [ -z "$cfgdir" ] && cfgdir=/home/root
-[ -z "$moddir" ] && moddir=/home/root/drivers
+[ -z "$moddir" ] && moddir=/lib/modules/$(uname -r)/kernel/drivers/EXTERNAL/deipce-driver/
 
 [ -z "$IP" ] && IP=/home/root/tools/iproute2/ip/ip
 [ -z "$VCONFIG" ] && VCONFIG=$bindir/vconfig
@@ -137,8 +137,8 @@ stop_vlan()
 
 start_deipce()
 {
-    insmod $moddir/flx_eth_mdio/flx_eth_mdio.ko
-    insmod $moddir/deipce/deipce.ko
+    insmod $moddir/flx_eth_mdio.ko
+    insmod $moddir/deipce.ko
     ifconfig $IFACE $IP netmask $NETMASK
 }
 
