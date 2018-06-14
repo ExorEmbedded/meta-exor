@@ -59,6 +59,7 @@ NET_TOOLS = " \
 	iproute2 \
 	linuxptp \
 	rwcontrol \
+	deipce-driver \
 "
 
 GSTREAMER = " \
