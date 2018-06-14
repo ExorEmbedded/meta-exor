@@ -57,6 +57,8 @@ NET_TOOLS = " \
 	tcpdump \
 	iftop \
 	iproute2 \
+	linuxptp \
+	rwcontrol \
 "
 
 GSTREAMER = " \
