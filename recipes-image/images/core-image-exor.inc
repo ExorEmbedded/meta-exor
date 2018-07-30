@@ -58,6 +58,9 @@ NET_TOOLS = " \
 	iftop \
 	iproute2 \
 	linuxptp \
+"
+
+USOM02_TSN_SW = " \
 	rwcontrol \
 	deipce-driver \
 "
@@ -104,6 +107,10 @@ IMAGE_INSTALL += "\
 	${NET_TOOLS} \
 	${AUDIO} \
 	${WIFI} \
+"
+
+IMAGE_INSTALL_append_usom02 += "\
+	${USOM02_TSN_SW} \
 "
 
 IMAGE_FEATURES_remove = "ssh-server-dropbear"

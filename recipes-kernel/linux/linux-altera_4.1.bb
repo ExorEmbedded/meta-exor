@@ -11,8 +11,7 @@ SRCREV = "45a1247dd316dad4cfa7640bbce7903c6d42feb4"
 
 SRC_URI += "file://0001-Added-compiler-gcc6.h.patch \
             file://0002-Add-linux-compiler-gcc7.h-to-fix-builds-with-gcc7.patch \
-            file://0003-added-stmmac-driver-from-kernel-4.3.patch \
-            file://0004-cumulative-deipce.patch \
+            file://0003-cumulative-deipce.patch \
 "
 
 COMPATIBLE_MACHINE = "(usom02)"
@@ -30,4 +29,3 @@ DTB_TARGET = "socfpga.dtb"
 
 KERNEL_RELEASE = "4.1"
 
-#INSANE_SKIP_${PN} += "installed-vs-shipped" 
