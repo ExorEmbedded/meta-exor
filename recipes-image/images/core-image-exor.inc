@@ -16,6 +16,7 @@ QT5_BASE = " \
 	qtquickcontrols2 \
 	qtquickcontrols2-qmlplugins \
 	qtgraphicaleffects \
+	qtserialbus \
 "
 
 QT5_WEB = " \
