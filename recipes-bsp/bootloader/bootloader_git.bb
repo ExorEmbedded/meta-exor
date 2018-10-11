@@ -11,10 +11,11 @@ PR = "r1"
 SRC_URI = "git://github.com/ExorEmbedded/uboot-us01.git;protocol=git;branch=uboot2014.04_uS01"
 SRCREV = "e7340191ba8c56f8c8733cc217cacc86030ac81a"
 
+#uSom 02 & uSom05
 SRC_URI_usom02 = "git://github.com/ExorEmbedded/uboot-us02.git;protocol=git;branch=master"
-SRCREV_usom02  = "cab40e340784b1dbf7c5a0f72697f0c1ae066d42"
+SRCREV_usom02  = "8f3c576ae66fad63669704bd88e9111babd6c39b"
 SRC_URI_usom05 = "git://github.com/ExorEmbedded/uboot-us02.git;protocol=git;branch=us02_etop"
-SRCREV_usom05  = "ee9b960d4410045879a97cede27c4ca521ac20fd"
+SRCREV_usom05  = "8f3c576ae66fad63669704bd88e9111babd6c39b"
 
 SRC_URI_nsom01 = "git://github.com/ExorEmbedded/uboot-us01.git;protocol=git;branch=uboot2017.07_nS01"
 SRCREV_nsom01  = "87901d3539c2f46f9f9b57ec110208411f98b535"

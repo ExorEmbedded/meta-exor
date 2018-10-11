@@ -8,7 +8,7 @@ inherit kernel fsl-kernel-localversion
 LOCALVERSION = "-4.1-2.0.x-imx"
 SCMVERSION = "y"
 SRCBRANCH = "4.1-2.0.x-imx-RT"
-SRCREV = "0e57261c109026dbcdfc2b4d698b9718c5abb6f2"
+SRCREV = "a59fac9afa2d8bf249d1d37962295e462ada14d0"
 
 SRC_URI = "git://github.com/ExorEmbedded/linux-us03.git;branch=${SRCBRANCH}"
 SRC_URI_append_ns01 += "file://0001-Redpine-wifi-driver-OSD-1.3-RC9.patch "
@@ -23,6 +23,7 @@ do_deploy () {
    install -m 0644 "${B}/arch/arm/boot/zImage" "${DEPLOYDIR}"
    for DTB in ${KERNEL_DEVICETREE}; do
       install -m 0644 "${B}/arch/arm/boot/dts/${DTB}" "${DEPLOYDIR}"
+      install -m 0644 "${B}/arch/arm/boot/dts/${DTB}" "${D}/boot/"
    done
 
    cd "${DEPLOYDIR}"

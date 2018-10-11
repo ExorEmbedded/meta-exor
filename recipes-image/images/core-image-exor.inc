@@ -59,6 +59,7 @@ NET_TOOLS = " \
 	iftop \
 	iproute2 \
 	linuxptp \
+	ethtool \
 "
 
 USOM02_TSN_SW = " \
