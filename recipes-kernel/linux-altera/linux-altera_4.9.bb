@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${KERNEL_RELEASE}:"
 
 SRC_URI = "git://github.com/ExorEmbedded/linux-us02.git;protocol=git;branch=4.9.76-RT-LTS_us05"
-SRCREV = "95c4201394d598515041869a587e5617206f58ac"
+SRCREV = "1e5c8783c8a483958d54d96503d03ab6d0a2f26d"
 
 COMPATIBLE_MACHINE = "(usom05)"
 

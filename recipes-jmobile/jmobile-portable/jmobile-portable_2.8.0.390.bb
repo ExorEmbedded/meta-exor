@@ -8,7 +8,8 @@ SRC_URI = "file://jmobile.desktop \
 	${EXOR_FTP}/OpenHMI/${JM_PKG_FILE};unpack=0 \
 "
 
-SRC_URI[md5sum] = "108a536a6c01fc51bdc7df872357c007"
+SRC_URI[md5sum] = "adb4740114e2231e6042b339130a191c"
+SRC_URI[sha256sum] = "e5e78d2477e313da141205ac2bfb9f1cd85a17ee55b15eee0babdf73f95976a2"
 
 S = "${WORKDIR}/jmobile_portable"
 
@@ -23,7 +24,7 @@ do_install() {
 
 fakeroot do_fakeroot_install() {
    mkdir -p ${D}/opt
-   tar xzf ${WORKDIR}/${JM_PKG_FILE} -C ${D}/opt
+   tar xpzf ${WORKDIR}/${JM_PKG_FILE} -C ${D}/opt
 }
 
 python populate_packages_prepend() {
