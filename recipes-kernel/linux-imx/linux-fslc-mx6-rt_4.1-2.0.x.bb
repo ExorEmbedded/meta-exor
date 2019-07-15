@@ -8,7 +8,7 @@ inherit kernel fsl-kernel-localversion
 LOCALVERSION = "-4.1-2.0.x-imx"
 SCMVERSION = "y"
 SRCBRANCH = "4.1-2.0.x-imx-RT"
-SRCREV = "a59fac9afa2d8bf249d1d37962295e462ada14d0"
+SRCREV = "11f1c688731ecdba107ef459ad97d8387665b59d"
 
 SRC_URI = "git://github.com/ExorEmbedded/linux-us03.git;branch=${SRCBRANCH}"
 SRC_URI_append_ns01 += "file://0001-Redpine-wifi-driver-OSD-1.3-RC9.patch "

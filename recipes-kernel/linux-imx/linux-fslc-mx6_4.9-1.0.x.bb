@@ -8,7 +8,7 @@ inherit kernel fsl-kernel-localversion
 LOCALVERSION = "-4.9-1.0.x-imx"
 SCMVERSION = "y"
 SRCBRANCH = "4.9-1.0.x-imx"
-SRCREV = "5a28c36dbadbfba57ff903267c83075dcd2325fe"
+SRCREV = "49b3f2e358450e086edb1d47db9fd8131b9c1b09"
 
 SRC_URI = "git://github.com/ExorEmbedded/linux-us03.git;branch=${SRCBRANCH}"
 S = "${WORKDIR}/git"

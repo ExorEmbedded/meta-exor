@@ -9,16 +9,16 @@ PR = "r1"
 
 #uSom01 & uSom03
 SRC_URI = "git://github.com/ExorEmbedded/uboot-us01.git;protocol=git;branch=uboot2014.04_uS01"
-SRCREV = "e7340191ba8c56f8c8733cc217cacc86030ac81a"
+SRCREV = "a469d5eb537cdae36199caba684c866a9763e8e0"
 
 #uSom 02 & uSom05
 SRC_URI_usom02 = "git://github.com/ExorEmbedded/uboot-us02.git;protocol=git;branch=master"
-SRCREV_usom02  = "8f3c576ae66fad63669704bd88e9111babd6c39b"
+SRCREV_usom02  = "cab40e340784b1dbf7c5a0f72697f0c1ae066d42"
 SRC_URI_usom05 = "git://github.com/ExorEmbedded/uboot-us02.git;protocol=git;branch=us02_etop"
 SRCREV_usom05  = "8f3c576ae66fad63669704bd88e9111babd6c39b"
 
 SRC_URI_nsom01 = "git://github.com/ExorEmbedded/uboot-us01.git;protocol=git;branch=uboot2017.07_nS01"
-SRCREV_nsom01  = "87901d3539c2f46f9f9b57ec110208411f98b535"
+SRCREV_nsom01  = "f65d92ec0b351ba600694e1c1b7c96828008538b"
 
 GCC7_PATCH = " file://0001-Add-linux-compiler-gcc5.h-to-fix-builds-with-gcc5.patch \
                file://0002-Add-linux-compiler-gcc6.h-to-fix-builds-with-gcc6.patch \
