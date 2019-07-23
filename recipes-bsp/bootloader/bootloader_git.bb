@@ -5,11 +5,11 @@ LIC_FILES_CHKSUM_usom05 = "file://README;beginline=1;endline=6;md5=05908ffcfd3d7
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
-PR = "r1"
+PR = "r2"
 
 #uSom01 & uSom03
 SRC_URI = "git://github.com/ExorEmbedded/uboot-us01.git;protocol=git;branch=uboot2014.04_uS01"
-SRCREV = "a469d5eb537cdae36199caba684c866a9763e8e0"
+SRCREV = "1a08cfc39d2bf45fde23b76ca6101d94645ce2cf"
 
 #uSom 02 & uSom05
 SRC_URI_usom02 = "git://github.com/ExorEmbedded/uboot-us02.git;protocol=git;branch=master"
