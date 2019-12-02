@@ -2,10 +2,14 @@ LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://README;beginline=1;endline=6;md5=157ab8408beab40cd8ce1dc69f702a6c"
 LIC_FILES_CHKSUM_usom02 = "file://README;beginline=1;endline=6;md5=05908ffcfd3d7d846e5c7eafa9ab62de"
 LIC_FILES_CHKSUM_usom05 = "file://README;beginline=1;endline=6;md5=05908ffcfd3d7d846e5c7eafa9ab62de"
+LIC_FILES_CHKSUM_nsom02 = "file://Licenses/README;md5=30503fd321432fc713238f582193b78e"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 PR = "r2"
+
+DEPENDS += "bc-native"
+DEPENDS += "flex-native bison-native"
 
 #uSom01 & uSom03
 SRC_URI = "git://github.com/ExorEmbedded/uboot-us01.git;protocol=git;branch=uboot2014.04_uS01"
@@ -14,11 +18,17 @@ SRCREV = "1a08cfc39d2bf45fde23b76ca6101d94645ce2cf"
 #uSom 02 & uSom05
 SRC_URI_usom02 = "git://github.com/ExorEmbedded/uboot-us02.git;protocol=git;branch=master"
 SRCREV_usom02  = "cab40e340784b1dbf7c5a0f72697f0c1ae066d42"
+
 SRC_URI_usom05 = "git://github.com/ExorEmbedded/uboot-us02.git;protocol=git;branch=us02_etop"
 SRCREV_usom05  = "8f3c576ae66fad63669704bd88e9111babd6c39b"
 
+#nSom01
 SRC_URI_nsom01 = "git://github.com/ExorEmbedded/uboot-us01.git;protocol=git;branch=uboot2017.07_nS01"
-SRCREV_nsom01  = "f65d92ec0b351ba600694e1c1b7c96828008538b"
+SRCREV_nsom01  = "02152ce87f5160d7976883fcba1973d2bbe46a2d"
+
+#nSom02
+SRC_URI_nsom02 = "git://github.com/ExorEmbedded/uboot-stm.git;protocol=git;branch=stm32_v2018.11"
+SRCREV_nsom02  = "23cfffadb05d3936f2f18e7ce491d1187dc3a723"
 
 GCC7_PATCH = " file://0001-Add-linux-compiler-gcc5.h-to-fix-builds-with-gcc5.patch \
                file://0002-Add-linux-compiler-gcc6.h-to-fix-builds-with-gcc6.patch \

@@ -37,5 +37,5 @@ do_deploy_append() {
 
 do_deploy[vardepsexclude] = "DATETIME"
 
-RDEPENDS_kernel-base = ""
+RDEPENDS_${KERNEL_PACKAGE_NAME}-base = ""
 

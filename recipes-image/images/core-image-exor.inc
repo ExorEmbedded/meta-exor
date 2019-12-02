@@ -6,11 +6,7 @@ QT5_BASE = " \
 	qtsvg \
 	qtsvg-plugins \
 	qt3d \
-	qtcanvas3d \
 	qtquickcontrols \
-	qtquick1 \
-	qtquick1-plugins \
-	qtquick1-qmlplugins \
 	qtquickcontrols \
 	qtquickcontrols-qmlplugins \
 	qtquickcontrols2 \
@@ -23,7 +19,6 @@ QT5_WEB = " \
 	qtwebengine \
 	qtwebengine-examples \
 	qtwebkit \
-	qtwebkit-examples-examples \
 "
 
 QT5_DEMO = " \
@@ -67,28 +62,11 @@ USOM02_TSN_SW = " \
 	deipce-driver \
 "
 
-GSTREAMER = " \
-	gstreamer1.0-plugins-base-playback \
-	gstreamer1.0-meta-base \
-	gstreamer1.0-meta-audio \
-	gstreamer1.0-meta-video \
-	gstreamer1.0-plugins-good-meta \
-	gstreamer1.0-plugins-bad-meta \
-	${@bb.utils.contains('LICENSE_FLAGS_WHITELIST', 'commercial', 'gstreamer1.0-plugins-ugly-meta gstreamer1.0-libav', '', d)} \
-"
-
-GSTREAMER_append_usom03 = " \
-	gstreamer1.0-plugins-imx \
-"
-
 AUDIO = "\
 	alsa-tools \
 	alsa-utils \
 	pulseaudio \ 
 "
-
-#Redpine Wifi firmware
-WIFI = "redpine-ods"
 
 IMAGE_INSTALL += "\
 	oprofile \
@@ -102,17 +80,11 @@ IMAGE_INSTALL += "\
 	e2fsprogs \
 	gdbserver \
 	kernel-modules \
-	${GSTREAMER} \
 	${QT5_BASE} \
 	${QT5_WEB} \
 	${TOOLS} \
 	${NET_TOOLS} \
 	${AUDIO} \
-	${WIFI} \
-"
-
-IMAGE_INSTALL_append_usom02 += "\
-	${USOM02_TSN_SW} \
 "
 
 IMAGE_FEATURES_remove = "ssh-server-dropbear"

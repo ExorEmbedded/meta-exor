@@ -44,4 +44,4 @@ do_deploy[vardepsexclude] = "DATETIME"
 
 DEPENDS += "lzop-native bc-native"
 
-COMPATIBLE_MACHINE = "(nsom01|usom03)"
+COMPATIBLE_MACHINE = "(nsom01)"

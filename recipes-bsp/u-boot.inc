@@ -27,6 +27,8 @@ UBOOT_MAKE_TARGET = "all"
 # to allow packaging the SPL.
 SPL_SUFFIX ?= "bin"
 SPL_BINARY ?= "xloader.${SPL_SUFFIX}"
+SPL_SUFFIX_nsom02 = "stm32"
+SPL_BINARY_nsom02 = "u-boot-spl.${SPL_SUFFIX}"
 
 do_compile () {
 	if [ "${@bb.utils.contains('DISTRO_FEATURES', 'ld-is-gold', 'ld-is-gold', '', d)}" = "ld-is-gold" ] ; then
@@ -66,6 +68,21 @@ do_deploy () {
         rm ${SPL_BINARY}
 
     fi
+}
+
+do_deploy_append_nsom02 () {
+    install -d ${DEPLOYDIR}
+
+    if [ -f ${B}/${config}/spl/${SPL_BINARY} ]; then
+        bbwarn "SPL FOUND " ${B}/${config}/spl/${SPL_BINARY} "B"
+        install -m 644  ${B}/${config}/spl/${SPL_BINARY}  ${DEPLOYDIR}
+        cd ${DEPLOYDIR}
+        tar czvf ${MACHINE}-xloader-v${DISTRO_VERSION}.tar.gz ${SPL_BINARY}
+        rm ${SPL_BINARY}
+    else
+        bbfatal "SPL not found! A" ${B}/${config}/spl/${SPL_BINARY} "B"
+    fi
+
 }
 
 addtask deploy before do_build after do_compile

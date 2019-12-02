@@ -8,14 +8,12 @@ QT_CONFIG_FLAGS_append_usom01 = "${@bb.utils.contains('DISTRO_FEATURES', 'waylan
 
 QT_EGLFS_PATCHES = "\
     file://0001-calculator-Add-exit-button-for-non-window-environmen.patch \
-    file://0002-animatedtiles-Add-exit-button-for-non-window-environ.patch \
     file://quit.png \
 "
 
 SRC_URI += "\
     ${@bb.utils.contains('DISTRO_FEATURES', 'wayland', '', "${QT_EGLFS_PATCHES}", d)}\
     file://0001-deform-Fix-how-controls-are-shown.patch \
-    file://0002-deform-disable-opengl-button.patch \
 "
 
 SRC_URI_append_usom03 = "file://us03-fix-EGL-include-order.patch"

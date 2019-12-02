@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Name=QT5 Player
 Comment=Exor demo video
-Exec=/usr/share/qt5/examples/multimediawidgets/videowidget/videowidget /usr/share/exorvideo/JSmart_320x240_25fps_audio.ogg
+Exec=/usr/share/examples/multimediawidgets/videowidget/videowidget /usr/share/exorvideo/JSmart_320x240_25fps_audio.ogg
 StartupNotify=true
 Terminal=false
 Type=Application
