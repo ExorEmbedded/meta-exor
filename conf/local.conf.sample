@@ -220,8 +220,3 @@ BB_DISKMON_DIRS = "\
 CONF_VERSION = "1"
 
 #LICENSE_FLAGS_WHITELIST += "commercial"
-
-# Mask machine specific layers
-BBMASK = "meta/recipes-graphics/xorg-|meta-freescale"
-BBMASK_usom03 = "meta/recipes-graphics/xorg-"
-BBMASK_nsom01 = "meta/recipes-graphics/xorg-"
