@@ -28,7 +28,7 @@ SRCREV_nsom01  = "02152ce87f5160d7976883fcba1973d2bbe46a2d"
 
 #nSom02
 SRC_URI_nsom02 = "git://github.com/ExorEmbedded/uboot-stm.git;protocol=git;branch=stm32_v2018.11"
-SRCREV_nsom02  = "23cfffadb05d3936f2f18e7ce491d1187dc3a723"
+SRCREV_nsom02  = "4e2260f34ab957f3cb43a16afaed057a70ab7c41"
 
 GCC7_PATCH = " file://0001-Add-linux-compiler-gcc5.h-to-fix-builds-with-gcc5.patch \
                file://0002-Add-linux-compiler-gcc6.h-to-fix-builds-with-gcc6.patch \
