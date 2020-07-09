@@ -10,12 +10,8 @@ SRCREV = "ab436bb0bd18dcd37a0f3af25915980ea04b4d77"
 SRC_URI = "git://github.com/ExorEmbedded/linux-stm.git;branch=${SRCBRANCH}"
 S = "${WORKDIR}/git"
 
-PROVIDES += "linux kernel"
-
-KERNEL_RELEASE = "4.19"
-LINUX_VERSION = "4.19"
+LINUX_VERSION = "4.19.49"
 
 COMPATIBLE_MACHINE = "(nsom02)"
 
-require linux-stm.inc
-
+require ../linux-exor.inc
