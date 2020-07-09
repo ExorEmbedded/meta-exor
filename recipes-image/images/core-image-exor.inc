@@ -73,7 +73,7 @@ IMAGE_INSTALL += "\
 	iproute2 \
 	canutils \
 	vim \
-	jmobile-portable \
+	openhmi-portable \
 	xf86-input-evdev \
 	openvpn \
 	openssh-sftp-server \

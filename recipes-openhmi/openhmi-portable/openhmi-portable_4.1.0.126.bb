@@ -2,29 +2,29 @@ DESCRIPTION = "JMobile Portable"
 LICENSE = "Proprietary"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=ce29dbb849109f28c0a0358e8fedbc64"
 
-JM_PKG_FILE="jmobile_${PV}_portable_devkit.tar.gz"
+OPENHMI_PKG_FILE="OpenHMI_Runtime-v${PV}.tar.gz"
 
-SRC_URI = "file://jmobile.desktop \
-	${EXOR_FTP}/OpenHMI/${JM_PKG_FILE};unpack=0 \
+SRC_URI = "file://openhmi.desktop \
+	${EXOR_FTP}/OpenHMI_4.1/${OPENHMI_PKG_FILE};unpack=0 \
 "
 
-SRC_URI[md5sum] = "108a536a6c01fc51bdc7df872357c007"
-SRC_URI[sha256sum] = "e6d3c3f13157cf080435bdb26ef503eeb639a6e060d1528648d55fb583c5f549"
+SRC_URI[md5sum] = "1b6e40ea338ae35236731dcc60ab5729"
+SRC_URI[sha256sum] = "13b47daa49c2d687b9b3679377b9c7b5dafbf1927abc3088afcde659edfe7529"
 
 S = "${WORKDIR}/jmobile_portable"
 
 do_unpack_license () {
-   tar xzf ${WORKDIR}/${JM_PKG_FILE} -C ${WORKDIR} jmobile_portable/LICENSE.txt
+   tar xzf ${WORKDIR}/${OPENHMI_PKG_FILE} -C ${WORKDIR} jmobile_portable/LICENSE.txt
 }
 
 do_install() {
    install -d ${D}${datadir}/applications
-   install -m 0644 ${WORKDIR}/jmobile.desktop ${D}${datadir}/applications/
+   install -m 0644 ${WORKDIR}/openhmi.desktop ${D}${datadir}/applications/
 }
 
 fakeroot do_fakeroot_install() {
    mkdir -p ${D}/opt
-   tar xpzf ${WORKDIR}/${JM_PKG_FILE} -C ${D}/opt
+   tar xpzf ${WORKDIR}/${OPENHMI_PKG_FILE} -C ${D}/opt
 }
 
 python populate_packages_prepend() {
