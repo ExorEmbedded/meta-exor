@@ -29,7 +29,7 @@ do_deploy_append() {
 		tar czvf "${MACHINE}-kernel-${KERNEL_VERSION}-${DATETIME}.tar.gz" "${KERNEL_IMAGETYPE}" ${KERNEL_DEVICETREE}
    fi
 
-   ln -sf "${MACHINE}-kernel-${KERNEL_VERSION}-${DATETIME}.tar.gz" ${MACHINE}-kernel-v${DISTRO_VERSION}.tar.gz
+   ln -sf "${MACHINE}-kernel-${KERNEL_VERSION}-${DATETIME}.tar.gz" ${MACHINE}-kernel-${KERNEL_RELEASE}.tar.gz
 
    rm -rf  ${KERNEL_IMAGETYPE}*
    rm -rf *.dtb
