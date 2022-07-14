@@ -1,6 +1,9 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-SRC_URI += "file://psplash-bar-img.h"
+SRC_URI += " \
+	file://psplash-bar-img.h \
+	file://psplash-init.append \
+"
 
 BAR_IMAGE = "file://psplash-bar-img.h"
 
@@ -32,3 +35,6 @@ python do_compile () {
         shutil.copyfile("psplash", outputfile)
 }
 
+do_install:append() {
+	cat ${WORKDIR}/psplash-init.append >> ${D}${sysconfdir}/init.d/psplash.sh
+}

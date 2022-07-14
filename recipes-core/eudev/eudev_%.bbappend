@@ -1,6 +1,6 @@
 PR := "${PR}.x5"
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 SRC_URI += " file://exorint.rules"
 
@@ -21,7 +21,7 @@ KERNEL=="ttyS2", SUBSYSTEM=="tty", PROGRAM="/bin/ln -sf ${SERIAL_DEV}2 /dev/ttyS
 KERNEL=="ttyS3", SUBSYSTEM=="tty", PROGRAM="/bin/ln -sf ${SERIAL_DEV}3 /dev/ttyS3"\n\
 KERNEL=="ttyS4", SUBSYSTEM=="tty", PROGRAM="/bin/ln -sf ${SERIAL_DEV}4 /dev/ttyS4"\n'
 
-do_install_append () {
+do_install:append () {
 
     install -m 0644 ${WORKDIR}/exorint.rules ${D}${sysconfdir}/udev/rules.d/exorint.rules
         
@@ -34,4 +34,4 @@ do_install_append () {
     fi
 }
 
-PACKAGE_ARCH= "${MACHINE_ARCH}"
+PACKAGE_ARCH = "${MACHINE_ARCH}"

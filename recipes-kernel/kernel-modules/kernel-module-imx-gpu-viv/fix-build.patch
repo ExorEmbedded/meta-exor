@@ -1,0 +1,20 @@
+--- git.orig/src/hal/os/linux/kernel/gc_hal_kernel_driver.c	2020-04-15 12:05:17.575748514 +0200
++++ git/src/hal/os/linux/kernel/gc_hal_kernel_driver.c	2020-04-15 12:05:48.851794253 +0200
+@@ -1284,7 +1284,7 @@
+ };
+ #endif /* USE_LINUX_PCIE */
+ 
+-static int __init gpu_init(void)
++static int gpu_init(void)
+ {
+     int ret = 0;
+ 
+@@ -1315,7 +1315,7 @@
+     return 0;
+ }
+ 
+-static void __exit gpu_exit(void)
++static void gpu_exit(void)
+ {
+ #if USE_LINUX_PCIE
+     pci_unregister_driver(&gpu_driver);

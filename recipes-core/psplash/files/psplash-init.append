@@ -1,0 +1,5 @@
+
+# Set backlight brightness
+mount -t sysfs sysfs /sys
+backlight_sys=$( echo /sys/class/backlight/backlight* )
+[ -e "$backlight_sys" ] && echo 25 > $backlight_sys/brightness
